@@ -1,0 +1,32 @@
+{
+  "name": "codingfragments-test-testcli",
+  "version": "1.0.3",
+  "description": "Simple Typescript command line",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preversion": "npm run compile && npm test",
+    "compile": "tsc && chmod +x build/lib/main.js",
+    "prestart": "npm run compile",
+    "start": "./build/lib/main.js",
+    "clean": "rm -rf build/*",
+    "lint": "tslint 'ts/**/*.ts?(x)' || exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "directories": {
+    "bin": "./build/bin",
+    "lib": "./build/lib"
+  },
+  "bin": {
+    "codingfragments-test-testcli": "./build/lib/main.js"
+  },
+  "dependencies": {
+    "@types/commander": "^2.9.2",
+    "@types/superagent": "^3.5.5",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^2.11.0",
+    "superagent": "^3.6.0"
+  }
+}
